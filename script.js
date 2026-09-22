@@ -78,7 +78,7 @@ function bindGenericWALinks() {
   document.querySelectorAll('[data-wa-generic]').forEach(el => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      const msg = encodeURIComponent('Halo Zyer! 👋 Saya mau tanya-tanya soal paket foto wisuda. Boleh dibantu?');
+      const msg = encodeURIComponent('Halo Zyer! 👋 Saya mau tanya-tanya soal paket Foto Outdoor. Boleh dibantu?');
       window.open(`https://wa.me/${CONFIG.waNumber}?text=${msg}`, '_blank');
     });
   });
