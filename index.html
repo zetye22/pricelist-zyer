@@ -19,10 +19,12 @@
        NAVBAR
   ========================================== -->
   <nav id="navbar">
-    <a href="#hero" class="nav-brand">
-      <img src="assets/logo.png" alt="Zyer Photography" class="nav-logo" />
-    </a>
-    <a href="#pricing" class="nav-cta">Lihat Harga</a>
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/logo.png" alt="Zyer Photography" class="nav-logo" />
+      </a>
+      <a href="#pricing" class="nav-cta">Lihat Harga</a>
+    </div>
   </nav>
 
 
@@ -80,7 +82,32 @@
       <p class="section-subtitle">Semua paket sudah termasuk <strong>All Photos Edited</strong> &amp; file high resolution via Google Drive.</p>
     </div>
 
-    <div class="pricing-grid">
+    <!-- ===== PRICING TABS ===== -->
+    <div class="pricing-tabs">
+      <button class="pricing-tab active" data-tab="after-sidang">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342"/>
+        </svg>
+        After Sidang
+      </button>
+      <button class="pricing-tab" data-tab="wisuda">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0z"/>
+        </svg>
+        Yudisium / Wisuda
+      </button>
+      <button class="pricing-tab" data-tab="video">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25z"/>
+        </svg>
+        Video Cinematic
+      </button>
+    </div>
+
+    <!-- ===== TAB PANEL: AFTER SIDANG ===== -->
+    <div class="pricing-tab-panel active" data-panel="after-sidang">
+      <div class="pricing-grid">
 
       <!-- ===== PAKET 1: AFTER SIDANG ===== -->
       <div class="pricing-card fade-in" data-delay="0">
@@ -91,7 +118,7 @@
           Durasi Sesi: 40 Menit
         </div>
 
-        <h3 class="card-title">Paket After Sidang</h3>
+        <h3 class="card-title">Paket Singel</h3>
         <p class="card-subtitle">Wisudawan Individu</p>
 
         <!-- TODO: Ganti teks di bawah dengan harga aktual, contoh: <div class="card-price">Rp 350.000</div> -->
@@ -143,16 +170,166 @@
         </ul>
 
         <button class="btn btn-wa"
-          data-wa-package="After Sidang"
+          data-wa-package="After Sidang Single"
           data-wa-duration="40 Menit">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.843L.057 23.535a.5.5 0 0 0 .609.61l5.76-1.51A11.956 11.956 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a10 10 0 0 1-5.2-1.453l-.374-.22-3.882 1.018 1.038-3.77-.243-.386A10 10 0 1 1 12 22z"/>
           </svg>
-          Pesan Paket After Sidang
+          Pesan Paket Single
         </button>
       </div>
-      <!-- ===== PAKET 1: SINGLE ===== -->
+
+      <!-- ===== PAKET 2: AFTER SIDANG ===== -->
+      <div class="pricing-card fade-in" data-delay="0">
+        <div class="duration-badge">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/>
+          </svg>
+          Durasi Sesi: 50 Menit
+        </div>
+
+        <h3 class="card-title">Paket Duo</h3>
+        <p class="card-subtitle">Couple atau Sahabat</p>
+
+        <!-- TODO: Ganti teks di bawah dengan harga aktual, contoh: <div class="card-price">Rp 350.000</div> -->
+        <div class="card-price">Rp 400.000</div>
+
+        <div class="divider"></div>
+
+        <ul class="feature-list">
+          <li class="feature-item highlight">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            ✨ All Photos Edited (Color Graded)
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            High Resolution via Google Drive
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            Bebas Pilih 1 Lokasi Outdoor
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            Sesi Individu, Pair/Couple & Detail
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            Foto berdua sekaligus foto masing-masing
+          </li>
+        </ul>
+
+        <button class="btn btn-wa"
+          data-wa-package="After Sidang Duo"
+          data-wa-duration="50 Menit">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.843L.057 23.535a.5.5 0 0 0 .609.61l5.76-1.51A11.956 11.956 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a10 10 0 0 1-5.2-1.453l-.374-.22-3.882 1.018 1.038-3.77-.243-.386A10 10 0 1 1 12 22z"/>
+          </svg>
+          Pesan Paket Duo
+        </button>
+      </div>
+
+      <!-- ===== PAKET 3: AFTER SIDANG ===== -->
+      <div class="pricing-card fade-in" data-delay="0">
+        <div class="duration-badge">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/>
+          </svg>
+          Durasi Sesi: 60 Menit
+        </div>
+
+        <h3 class="card-title">Paket Group</h3>
+        <p class="card-subtitle">Max 4 Orang</p>
+
+        <!-- TODO: Ganti teks di bawah dengan harga aktual, contoh: <div class="card-price">Rp 350.000</div> -->
+        <div class="card-price">Rp 500.000</div>
+
+        <div class="divider"></div>
+
+        <ul class="feature-list">
+          <li class="feature-item highlight">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            ✨ All Photos Edited (Color Graded)
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            High Resolution via Google Drive
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            Bebas Pilih 1 Lokasi Outdoor
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            Sesi Foto Kelompok Bersama
+          </li>
+          <li class="feature-item">
+            <span class="check">
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            Foto Individu Masing-masing
+          </li>
+        </ul>
+
+        <button class="btn btn-wa"
+          data-wa-package="After Sidang Group"
+          data-wa-duration="60 Menit">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.843L.057 23.535a.5.5 0 0 0 .609.61l5.76-1.51A11.956 11.956 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a10 10 0 0 1-5.2-1.453l-.374-.22-3.882 1.018 1.038-3.77-.243-.386A10 10 0 1 1 12 22z"/>
+          </svg>
+          Pesan Paket Group
+        </button>
+      </div>
+
+      </div><!-- /pricing-grid-single -->
+    </div><!-- /pricing-tab-panel after-sidang -->
+
+    <!-- ===== TAB PANEL: WISUDA / YUDISIUM ===== -->
+    <div class="pricing-tab-panel" data-panel="wisuda">
+      <div class="pricing-grid">
+
+      <!-- ===== PAKET: SINGLE ===== -->
       <div class="pricing-card fade-in" data-delay="0">
         <div class="duration-badge">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -368,8 +545,15 @@
         </button>
       </div>
 
-      <!-- ===== PAKET 3: Video Cinematic ===== -->
-      <div class="pricing-card fade-in" data-delay="200">
+      </div><!-- /pricing-grid -->
+    </div><!-- /pricing-tab-panel wisuda -->
+
+    <!-- ===== TAB PANEL: VIDEO CINEMATIC ===== -->
+    <div class="pricing-tab-panel" data-panel="video">
+      <div class="pricing-grid pricing-grid-single">
+
+      <!-- ===== PAKET: Video Cinematic ===== -->
+      <div class="pricing-card fade-in" data-delay="0">
         <div class="duration-badge">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/>
@@ -438,7 +622,9 @@
         </button>
       </div>
 
-    </div><!-- /pricing-grid -->
+      </div><!-- /pricing-grid-single -->
+    </div><!-- /pricing-tab-panel video -->
+
   </section>
 
 
@@ -457,9 +643,9 @@
       <!-- Add-on: Tambahan Orang -->
       <div class="addon-card fade-in" data-delay="0">
         <div class="addon-icon">👤</div>
-        <div class="addon-title">Tambahan Orang / Peserta</div>
+        <div class="addon-title">Tambahan Orang / Pendamping</div>
         <div class="addon-desc">
-          Penambahan anggota wisudawan di luar kuota paket utama. Semua foto tambahan tetap <strong>All Edited</strong>, termasuk porsi foto individu.
+          Penambahan pendamping di luar kuota paket utama. Semua foto tambahan tetap <strong>All Edited</strong>, termasuk porsi foto individu.
         </div>
         <!-- TODO: Ganti dengan harga aktual, misal: +Rp 75.000 / orang -->
         <div class="addon-price">+Rp 35.000 / orang</div>
@@ -511,70 +697,124 @@
       =====================================================
     -->
     <div class="gallery-grid">
-      <!-- Slot 1 (placeholder) -->
-      <div class="gallery-item">
+      <!-- Slot 1: After Sidang -->
+      <div class="gallery-item" data-src="assets/photos/foto1.jpg" data-category="After Sidang" data-title="Sesi Santai &amp; Selempang">
+        <img src="assets/photos/foto1.jpg" alt="After Sidang — Sesi Santai &amp; Selempang" loading="lazy" onerror="this.style.opacity='0';" />
         <div class="gallery-placeholder">
           <span class="placeholder-icon">📷</span>
           <span>foto segera hadir</span>
         </div>
-        <div class="gallery-overlay"><div class="gallery-overlay-icon">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-        </div></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <div class="gallery-info">
+              <span class="gallery-category">After Sidang</span>
+              <h4 class="gallery-title">Sesi Santai &amp; Selempang</h4>
+            </div>
+            <div class="gallery-overlay-icon" aria-hidden="true">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Slot 2 -->
-      <div class="gallery-item">
+      <!-- Slot 2: Wisuda Single -->
+      <div class="gallery-item" data-src="assets/photos/foto2.jpg" data-category="Wisuda Single" data-title="Potret Formal &amp; Toga">
+        <img src="assets/photos/foto2.jpg" alt="Wisuda Single — Potret Formal &amp; Toga" loading="lazy" onerror="this.style.opacity='0';" />
         <div class="gallery-placeholder">
           <span class="placeholder-icon">📷</span>
           <span>foto segera hadir</span>
         </div>
-        <div class="gallery-overlay"><div class="gallery-overlay-icon">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-        </div></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <div class="gallery-info">
+              <span class="gallery-category">Wisuda Single</span>
+              <h4 class="gallery-title">Potret Formal &amp; Toga</h4>
+            </div>
+            <div class="gallery-overlay-icon" aria-hidden="true">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Slot 3 (tall card) -->
-      <div class="gallery-item">
+      <!-- Slot 3: Duo / Bestie -->
+      <div class="gallery-item" data-src="assets/photos/foto3.jpg" data-category="Duo / Bestie" data-title="Momen Bersama Sahabat">
+        <img src="assets/photos/foto3.jpg" alt="Duo / Bestie — Momen Bersama Sahabat" loading="lazy" onerror="this.style.opacity='0';" />
         <div class="gallery-placeholder">
           <span class="placeholder-icon">📷</span>
           <span>foto segera hadir</span>
         </div>
-        <div class="gallery-overlay"><div class="gallery-overlay-icon">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-        </div></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <div class="gallery-info">
+              <span class="gallery-category">Duo / Bestie</span>
+              <h4 class="gallery-title">Momen Bersama Sahabat</h4>
+            </div>
+            <div class="gallery-overlay-icon" aria-hidden="true">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Slot 4 -->
-      <div class="gallery-item">
+      <!-- Slot 4: Wisuda Group -->
+      <div class="gallery-item" data-src="assets/photos/foto4.jpg" data-category="Wisuda Group" data-title="Keseruan Bareng Teman">
+        <img src="assets/photos/foto4.jpg" alt="Wisuda Group — Keseruan Bareng Teman" loading="lazy" onerror="this.style.opacity='0';" />
         <div class="gallery-placeholder">
           <span class="placeholder-icon">📷</span>
           <span>foto segera hadir</span>
         </div>
-        <div class="gallery-overlay"><div class="gallery-overlay-icon">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-        </div></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <div class="gallery-info">
+              <span class="gallery-category">Wisuda Group</span>
+              <h4 class="gallery-title">Keseruan Bareng Teman</h4>
+            </div>
+            <div class="gallery-overlay-icon" aria-hidden="true">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Slot 5 (wide) -->
-      <div class="gallery-item">
+      <!-- Slot 5: Outdoor Session -->
+      <div class="gallery-item" data-src="assets/photos/foto5.jpg" data-category="Outdoor Session" data-title="Golden Hour Glow">
+        <img src="assets/photos/foto5.jpg" alt="Outdoor Session — Golden Hour Glow" loading="lazy" onerror="this.style.opacity='0';" />
         <div class="gallery-placeholder">
           <span class="placeholder-icon">📷</span>
           <span>foto segera hadir</span>
         </div>
-        <div class="gallery-overlay"><div class="gallery-overlay-icon">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-        </div></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <div class="gallery-info">
+              <span class="gallery-category">Outdoor Session</span>
+              <h4 class="gallery-title">Golden Hour Glow</h4>
+            </div>
+            <div class="gallery-overlay-icon" aria-hidden="true">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Slot 6 (wide) -->
-      <div class="gallery-item">
+      <!-- Slot 6: Video Cinematic -->
+      <div class="gallery-item" data-src="assets/photos/foto6.jpg" data-category="Video Cinematic" data-title="Teaser Video 1 Menit">
+        <img src="assets/photos/foto6.jpg" alt="Video Cinematic — Teaser Video 1 Menit" loading="lazy" onerror="this.style.opacity='0';" />
         <div class="gallery-placeholder">
           <span class="placeholder-icon">📷</span>
           <span>foto segera hadir</span>
         </div>
-        <div class="gallery-overlay"><div class="gallery-overlay-icon">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-        </div></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <div class="gallery-info">
+              <span class="gallery-category">Video Cinematic</span>
+              <h4 class="gallery-title">Teaser Video 1 Menit</h4>
+            </div>
+            <div class="gallery-overlay-icon" aria-hidden="true">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -694,7 +934,10 @@
   ========================================== -->
   <div id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery Lightbox">
     <button id="lightbox-close" class="lightbox-close" aria-label="Tutup">✕</button>
-    <img id="lightbox-img" src="" alt="Preview foto portofolio Zyer" />
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Preview foto portofolio Zyer" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
   </div>
 
 

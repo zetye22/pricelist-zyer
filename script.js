@@ -96,13 +96,22 @@ function bindSocialLinks() {
 
 
 /* ===== Gallery Lightbox ===== */
-const lightbox    = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxClose = document.getElementById('lightbox-close');
+const lightbox        = document.getElementById('lightbox');
+const lightboxImg     = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxClose   = document.getElementById('lightbox-close');
 
-function openLightbox(src) {
+function openLightbox(src, category = '', title = '') {
   if (!lightbox || !src) return;
   lightboxImg.src = src;
+  if (lightboxCaption) {
+    if (category || title) {
+      lightboxCaption.textContent = category && title ? `${category} — ${title}` : (title || category);
+      lightboxCaption.style.display = 'inline-block';
+    } else {
+      lightboxCaption.style.display = 'none';
+    }
+  }
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -111,17 +120,26 @@ function closeLightbox() {
   if (!lightbox) return;
   lightbox.classList.remove('active');
   document.body.style.overflow = '';
-  setTimeout(() => { if (lightboxImg) lightboxImg.src = ''; }, 300);
+  setTimeout(() => {
+    if (lightboxImg) lightboxImg.src = '';
+    if (lightboxCaption) lightboxCaption.textContent = '';
+  }, 300);
 }
 
 function bindGallery() {
   document.querySelectorAll('.gallery-item[data-src]').forEach(item => {
-    item.addEventListener('click', () => openLightbox(item.dataset.src));
+    item.addEventListener('click', () => {
+      openLightbox(
+        item.dataset.src,
+        item.dataset.category || '',
+        item.dataset.title || ''
+      );
+    });
   });
 
   lightboxClose?.addEventListener('click', closeLightbox);
   lightbox?.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) closeLightbox();
   });
 
   document.addEventListener('keydown', (e) => {
@@ -171,6 +189,40 @@ function initSmoothScroll() {
 }
 
 
+/* ===== Pricing Tabs ===== */
+function initPricingTabs() {
+  const tabs = document.querySelectorAll('.pricing-tab');
+  const panels = document.querySelectorAll('.pricing-tab-panel');
+
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+
+      // Update tabs active state
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Update panels active state
+      panels.forEach(panel => {
+        if (panel.dataset.panel === target) {
+          panel.classList.add('active');
+          // Trigger smooth reveal for cards inside active panel
+          panel.querySelectorAll('.fade-in').forEach((card, idx) => {
+            setTimeout(() => {
+              card.classList.add('visible');
+            }, idx * 80);
+          });
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+}
+
+
 /* ===== Init All ===== */
 document.addEventListener('DOMContentLoaded', () => {
   bindWAButtons();
@@ -180,4 +232,5 @@ document.addEventListener('DOMContentLoaded', () => {
   bindGallery();
   initFadeIn();
   initSmoothScroll();
+  initPricingTabs();
 });
