@@ -92,6 +92,11 @@ function bindSocialLinks() {
   document.querySelectorAll('[data-social="tiktok"]').forEach(el => {
     el.href = CONFIG.tiktokUrl;
   });
+  document.querySelectorAll('[data-video-link]').forEach(el => {
+    if (!el.getAttribute('href') || el.getAttribute('href') === '#') {
+      el.href = CONFIG.instagramUrl;
+    }
+  });
 }
 
 
@@ -223,6 +228,49 @@ function initPricingTabs() {
 }
 
 
+/* ===== Video Platform Modal ===== */
+const videoModal = document.getElementById('video-modal');
+const videoModalClose = document.getElementById('video-modal-close');
+const videoLinkInstagram = document.getElementById('video-link-instagram');
+const videoLinkTiktok = document.getElementById('video-link-tiktok');
+
+function openVideoModal(igUrl, tiktokUrl) {
+  if (!videoModal) return;
+  if (videoLinkInstagram) videoLinkInstagram.href = igUrl || CONFIG.instagramUrl;
+  if (videoLinkTiktok) videoLinkTiktok.href = tiktokUrl || CONFIG.tiktokUrl;
+  videoModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal() {
+  if (!videoModal) return;
+  videoModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function initVideoModal() {
+  document.querySelectorAll('[data-video-modal]').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const igUrl = item.dataset.instagram || CONFIG.instagramUrl;
+      const tiktokUrl = item.dataset.tiktok || CONFIG.tiktokUrl;
+      openVideoModal(igUrl, tiktokUrl);
+    });
+  });
+
+  videoModalClose?.addEventListener('click', closeVideoModal);
+  videoModal?.addEventListener('click', (e) => {
+    if (e.target === videoModal) closeVideoModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal?.classList.contains('active')) {
+      closeVideoModal();
+    }
+  });
+}
+
+
 /* ===== Init All ===== */
 document.addEventListener('DOMContentLoaded', () => {
   bindWAButtons();
@@ -230,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindGenericWALinks();
   bindSocialLinks();
   bindGallery();
+  initVideoModal();
   initFadeIn();
   initSmoothScroll();
   initPricingTabs();
