@@ -479,7 +479,7 @@ h1, h2, h3, h4 {
 .pricing-card {
   background: var(--clr-surface);
   border-radius: var(--radius-lg);
-  padding: clamp(22px, 3.5vw, 32px) clamp(18px, 3vw, 26px);
+  padding: 16px 14px;
   border: 1.5px solid var(--clr-beige);
   position: relative;
   transition: all var(--transition);
@@ -529,7 +529,7 @@ h1, h2, h3, h4 {
 
 .card-title {
   font-family: var(--font-brand);
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   color: var(--clr-dark);
   margin-bottom: 4px;
 }
@@ -537,7 +537,7 @@ h1, h2, h3, h4 {
 .card-subtitle {
   font-size: 0.82rem;
   color: var(--clr-text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .card-price {

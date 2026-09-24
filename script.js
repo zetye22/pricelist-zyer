@@ -283,3 +283,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initPricingTabs();
 });
+
+/* ===== Pricing Toggle Details ===== */
+function toggleDetails(btn) {
+  const cardDetails = btn.nextElementSibling;
+  if (!cardDetails || !cardDetails.classList.contains('card-details')) return;
+  
+  if (cardDetails.style.display === 'none') {
+    cardDetails.style.display = 'block';
+    btn.textContent = 'Sembunyikan Detail';
+    btn.classList.add('active');
+  } else {
+    cardDetails.style.display = 'none';
+    btn.textContent = 'Lihat Detail';
+    btn.classList.remove('active');
+  }
+}
